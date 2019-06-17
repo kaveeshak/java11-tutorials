@@ -45,5 +45,16 @@ public class Main {
         DayOfTheWeekChallange.printDayOfTheWeek(3);
         DayOfTheWeekChallange.printDayOfTheWeek(-5);
         DayOfTheWeekChallange.printDayOfTheWeek(43);
+
+        //For statement (For loop)
+        for (int i = 2; i < 9; i++) {
+            System.out.println("10,000 at " + i + "% interest rate = " +
+                    calculateInterest(10000.00, i));
+        }
+
+    }
+
+    public static double calculateInterest(double amount, double interestRate) {
+        return ((amount * interestRate) / 100);
     }
 }
