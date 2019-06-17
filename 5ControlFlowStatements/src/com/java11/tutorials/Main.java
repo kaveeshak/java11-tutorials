@@ -1,9 +1,12 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.DayOfTheWeekChallange;
+
 public class Main {
 
     public static void main(String[] args) {
 
+        //Switch statement.
         int number = 2;
 
         switch(number) {
@@ -37,5 +40,10 @@ public class Main {
                 System.out.println("Month was not found.");
                 break;
         }
+
+        //Testing DayOfTheWeekChallange
+        DayOfTheWeekChallange.printDayOfTheWeek(3);
+        DayOfTheWeekChallange.printDayOfTheWeek(-5);
+        DayOfTheWeekChallange.printDayOfTheWeek(43);
     }
 }
