@@ -1,6 +1,7 @@
 package com.java11.tutorials;
 
 import com.java11.exercises.DayOfTheWeekChallange;
+import com.java11.exercises.Sum3And5Challenge;
 
 public class Main {
 
@@ -51,6 +52,9 @@ public class Main {
             System.out.println("10,000 at " + i + "% interest rate = " +
                     calculateInterest(10000.00, i));
         }
+
+        //Sum 3 and 5 challenge.
+        Sum3And5Challenge.sum3And5();
 
     }
 
