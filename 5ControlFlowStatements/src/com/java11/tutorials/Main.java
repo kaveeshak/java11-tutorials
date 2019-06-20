@@ -1,6 +1,7 @@
 package com.java11.tutorials;
 
 import com.java11.exercises.DayOfTheWeekChallange;
+import com.java11.exercises.DigitSumChallenge;
 import com.java11.exercises.Sum3And5Challenge;
 
 public class Main {
@@ -50,15 +51,71 @@ public class Main {
         //For statement (For loop)
         for (int i = 2; i < 9; i++) {
             System.out.println("10,000 at " + i + "% interest rate = " +
-                    calculateInterest(10000.00, i));
+                    String.format("%.2f", calculateInterest(10000.00, i)));
         }
 
         //Sum 3 and 5 challenge.
         Sum3And5Challenge.sum3And5();
 
+        //While statement (While loop)
+        int count = 0;
+        while (count < 6) {
+            System.out.println("Count is " + count);
+            count++;
+        }
+
+        count = 0;
+        while (true) {
+
+            if (count > 5) {
+                break;
+            }
+
+            System.out.println("Count is " + count);
+            count++;
+        }
+
+        //do while statement
+        count = 6;
+        do {
+            System.out.println("do while count is " + count);
+            count++;
+        } while (count < 6);
+
+        //Quiz
+        count = 0;
+        int totalEvenNumbers = 0;
+        String listOfEvenNumbers = "";
+
+        System.out.println("First 5 even numbers from 1 - 20 are:");
+
+        while (count <= 20) {
+
+            count++;
+
+            if (totalEvenNumbers == 5) {
+                break;
+            } else if (!isEvenNumber(count)) {
+                continue;
+            }
+
+            totalEvenNumbers++;
+            listOfEvenNumbers += count + " ";
+        }
+
+        System.out.println(listOfEvenNumbers);
+
+        //Digits sum challenge
+        System.out.println("Sum of numbers in 127 = " + DigitSumChallenge.sumDigits(127));
+        System.out.println("Sum of numbers in 57 = " + DigitSumChallenge.sumDigits(57));
     }
 
     public static double calculateInterest(double amount, double interestRate) {
         return ((amount * interestRate) / 100);
+    }
+
+    public static boolean isEvenNumber(int number) {
+
+        return ((number % 2) == 0) ? true : false;
     }
 }
