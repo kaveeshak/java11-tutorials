@@ -112,6 +112,13 @@ public class Main {
 
         //Testing shared digit.
         System.out.println(SharedDigit.hasSharedDigit(12, 53));
+
+        //Parsing values from Strings.
+        String numberAsString = "20";
+        int numberAsPrimitive = 20;
+
+        System.out.println("numberAsString = " + (numberAsString + 1));
+        System.out.println("numberAsPrimitive = " + (numberAsPrimitive + 1));
     }
 
     public static double calculateInterest(double amount, double interestRate) {
