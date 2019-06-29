@@ -2,6 +2,7 @@ package com.java11.tutorials;
 
 import com.java11.exercises.DayOfTheWeekChallange;
 import com.java11.exercises.DigitSumChallenge;
+import com.java11.exercises.SharedDigit;
 import com.java11.exercises.Sum3And5Challenge;
 
 public class Main {
@@ -108,6 +109,9 @@ public class Main {
         //Digits sum challenge
         System.out.println("Sum of numbers in 127 = " + DigitSumChallenge.sumDigits(127));
         System.out.println("Sum of numbers in 57 = " + DigitSumChallenge.sumDigits(57));
+
+        //Testing shared digit.
+        System.out.println(SharedDigit.hasSharedDigit(12, 53));
     }
 
     public static double calculateInterest(double amount, double interestRate) {
