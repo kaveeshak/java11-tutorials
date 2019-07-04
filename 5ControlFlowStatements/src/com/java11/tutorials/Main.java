@@ -5,6 +5,8 @@ import com.java11.exercises.DigitSumChallenge;
 import com.java11.exercises.SharedDigit;
 import com.java11.exercises.Sum3And5Challenge;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -120,6 +122,18 @@ public class Main {
         System.out.println("numberAsString = " + (numberAsString + 1));
         System.out.println("numberAsPrimitive = " + (numberAsPrimitive + 1));
 
+        //Reading user input.
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("What is your birth year ?");
+        int birthYear = scanner.nextInt();
+        scanner.nextLine(); //Handling Enter
+
+        System.out.println("What is your name ?");
+        String name = scanner.nextLine();
+        scanner.close();
+
+        System.out.println("Hello " + name + ", Your age is " + (2019 - birthYear));
     }
 
     public static double calculateInterest(double amount, double interestRate) {
