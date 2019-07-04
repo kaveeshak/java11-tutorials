@@ -119,6 +119,7 @@ public class Main {
 
         System.out.println("numberAsString = " + (numberAsString + 1));
         System.out.println("numberAsPrimitive = " + (numberAsPrimitive + 1));
+
     }
 
     public static double calculateInterest(double amount, double interestRate) {
