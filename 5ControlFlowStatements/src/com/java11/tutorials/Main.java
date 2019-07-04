@@ -126,14 +126,26 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What is your birth year ?");
-        int birthYear = scanner.nextInt();
-        scanner.nextLine(); //Handling Enter
 
-        System.out.println("What is your name ?");
-        String name = scanner.nextLine();
-        scanner.close();
+        if (scanner.hasNextInt()) {
+            int birthYear = scanner.nextInt();
+            scanner.nextLine(); //Handling Enter
 
-        System.out.println("Hello " + name + ", Your age is " + (2019 - birthYear));
+            System.out.println("What is your name ?");
+            String name = scanner.nextLine();
+            scanner.close();
+
+            int age = 2019 - birthYear;
+
+            if (age >= 0 && age <= 100) {
+                System.out.println("Hello " + name + ", Your age is " + age);
+            } else {
+                System.out.println("Invalid birth year.");
+            }
+        } else {
+            System.out.println("Invalid input. Unable to parse.");
+        }
+
     }
 
     public static double calculateInterest(double amount, double interestRate) {
