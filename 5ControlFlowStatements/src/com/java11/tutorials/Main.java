@@ -147,7 +147,10 @@ public class Main {
         */
 
         //Reading user input challenge.
-        ReadingUserInput.readingUserInputChallenge();
+        //ReadingUserInput.readingUserInputChallenge();
+
+        //Minimum and maximum challenge.
+        MinimumAndMaximum.minimumAndMaximumChallenge();
 
     }
 
