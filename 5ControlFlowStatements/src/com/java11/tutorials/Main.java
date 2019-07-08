@@ -1,9 +1,6 @@
 package com.java11.tutorials;
 
-import com.java11.exercises.DayOfTheWeekChallange;
-import com.java11.exercises.DigitSumChallenge;
-import com.java11.exercises.SharedDigit;
-import com.java11.exercises.Sum3And5Challenge;
+import com.java11.exercises.*;
 
 import java.util.Scanner;
 
@@ -123,6 +120,8 @@ public class Main {
         System.out.println("numberAsPrimitive = " + (numberAsPrimitive + 1));
 
         //Reading user input.
+
+        /*
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("What is your birth year ?");
@@ -145,6 +144,10 @@ public class Main {
         } else {
             System.out.println("Invalid input. Unable to parse.");
         }
+        */
+
+        //Reading user input challenge.
+        ReadingUserInput.readingUserInputChallenge();
 
     }
 
