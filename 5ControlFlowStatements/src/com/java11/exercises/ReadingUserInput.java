@@ -16,12 +16,12 @@ public class ReadingUserInput {
 
             if (scanner.hasNextInt()) {
                 sum += scanner.nextInt();
+                i++;
             } else {
                 System.out.println("Invalid Number");
             }
 
             scanner.nextLine();
-            i++;
         }
 
         scanner.close();
