@@ -1,5 +1,6 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.Person;
 import com.java11.exercises.SimpleCalculator;
 
 public class Main {
@@ -22,5 +23,16 @@ public class Main {
         System.out.println(simpleCalculator.getDivisionResult());
         simpleCalculator.setSecondNumber(0);
         System.out.println(simpleCalculator.getDivisionResult());
+
+        //Testing Person.
+        Person person = new Person();
+        person.setAge(103);
+        System.out.println(person.getAge());
+        System.out.println(person.isTeen());
+        person.setFirstName("Venura");
+        person.setLastName("Komangodage");
+        person.setAge(15);
+        System.out.println(person.getFullName());
+        System.out.println(person.isTeen());
     }
 }
