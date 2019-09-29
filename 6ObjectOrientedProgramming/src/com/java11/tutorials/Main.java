@@ -3,6 +3,7 @@ package com.java11.tutorials;
 import com.java11.exercises.BankAccount;
 import com.java11.exercises.Person;
 import com.java11.exercises.SimpleCalculator;
+import com.java11.exercises.VipCustomer;
 
 public class Main {
 
@@ -58,5 +59,18 @@ public class Main {
         BankAccount testBankAccount = new BankAccount();
         System.out.println(testBankAccount.getCustomerName());
         System.out.println(testBankAccount.getBalance());
+
+        //Testing VipCustomer.
+        VipCustomer vipCustomer1 = new VipCustomer();
+        System.out.println("vipCustomer1");
+        System.out.println(vipCustomer1.getName());
+        System.out.println(vipCustomer1.getCreditLimit());
+        System.out.println(vipCustomer1.getEmailAddress());
+
+        VipCustomer vipCustomer2 = new VipCustomer("Venura", 20000.00);
+        System.out.println("vipCustomer2");
+        System.out.println(vipCustomer2.getName());
+        System.out.println(vipCustomer2.getCreditLimit());
+        System.out.println(vipCustomer2.getEmailAddress());
     }
 }
