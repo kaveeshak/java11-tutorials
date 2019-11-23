@@ -1,9 +1,6 @@
 package com.java11.tutorials;
 
-import com.java11.exercises.BankAccount;
-import com.java11.exercises.Person;
-import com.java11.exercises.SimpleCalculator;
-import com.java11.exercises.VipCustomer;
+import com.java11.exercises.*;
 
 public class Main {
 
@@ -72,5 +69,14 @@ public class Main {
         System.out.println(vipCustomer2.getName());
         System.out.println(vipCustomer2.getCreditLimit());
         System.out.println(vipCustomer2.getEmailAddress());
+
+        //Testing Wall.
+        Wall kitchenWall1 = new Wall();
+        System.out.println(kitchenWall1.getArea());
+        Wall kitchenWall2 = new Wall(-3.2, -0.2);
+        System.out.println(kitchenWall1.getArea());
+        kitchenWall2.setHeight(10);
+        kitchenWall2.setWidth(8);
+        System.out.println(kitchenWall2.getArea());
     }
 }
