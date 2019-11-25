@@ -78,5 +78,14 @@ public class Main {
         kitchenWall2.setHeight(10);
         kitchenWall2.setWidth(8);
         System.out.println(kitchenWall2.getArea());
+
+        //Testing Point.
+        Point first = new Point(6, 5);
+        Point second = new Point(3, 1);
+        System.out.println(first.distance());
+        System.out.println(first.distance(second));
+        System.out.println(first.distance(2, 2));
+        Point point = new Point();
+        System.out.println(point.distance());
     }
 }
