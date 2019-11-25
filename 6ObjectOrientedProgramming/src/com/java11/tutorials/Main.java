@@ -87,5 +87,17 @@ public class Main {
         System.out.println(first.distance(2, 2));
         Point point = new Point();
         System.out.println(point.distance());
+
+        //Testing Carpet Cost Calculator.
+        System.out.println();
+        System.out.println("Testing Carpet Cost Calculator...");
+        Carpet carpet = new Carpet(3.5);
+        Floor floor = new Floor(2.75, 4);
+        Calculator calculator = new Calculator(floor, carpet);
+        System.out.println(calculator.getTotalCost());
+        carpet = new Carpet(1.5);
+        floor = new Floor(5.4, 4.5);
+        calculator = new Calculator(floor, carpet);
+        System.out.println(calculator.getTotalCost());
     }
 }
