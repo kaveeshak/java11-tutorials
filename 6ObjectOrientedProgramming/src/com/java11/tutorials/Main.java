@@ -114,5 +114,12 @@ public class Main {
         number.subtract(one);
         System.out.println(number.getReal());
         System.out.println(number.getImaginary());
+
+        //Inheritance demo.
+        System.out.println();
+        System.out.println("Inheritance demo...");
+        Animal animal = new Animal("Animal", 1, 1, 5, 5);
+        Dog dog = new Dog("Yorkie", 8, 20, 2, 4, 1, 20, "Long silky");
+        dog.eat(); //This is defined in the animal class.
     }
 }
