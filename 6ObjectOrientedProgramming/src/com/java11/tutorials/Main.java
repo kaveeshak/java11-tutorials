@@ -123,5 +123,16 @@ public class Main {
         dog.eat(); //This is defined in the animal class.
         dog.walk();
         dog.run();
+
+        //Testing instance reference demo.
+        System.out.println();
+        System.out.println("Instance reference...");
+        House blueHouse = new House("Blue");
+        House yellowHouse = blueHouse;
+        System.out.println(blueHouse.getColor());
+        System.out.println(yellowHouse.getColor());
+        yellowHouse.setColor("Red");
+        System.out.println(blueHouse.getColor());
+        System.out.println(yellowHouse.getColor());
     }
 }
