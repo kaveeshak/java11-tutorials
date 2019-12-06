@@ -134,5 +134,14 @@ public class Main {
         yellowHouse.setColor("Red");
         System.out.println(blueHouse.getColor());
         System.out.println(yellowHouse.getColor());
+
+        //Testing inheritance challenge.
+        System.out.println();
+        System.out.println("Testing inheritance challenge.");
+        Outlander outlander = new Outlander(36);
+        outlander.steer(45);
+        outlander.accelerate(30);
+        outlander.accelerate(20);
+        outlander.accelerate(-42);
     }
 }
