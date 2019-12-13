@@ -16,6 +16,8 @@ public class Main {
         pc.getTheCase().pressPowerButton();
 
         //Testing Composition challenge.
+        System.out.println();
+        System.out.println("Testing Composition challenge...");
         Wall wall1 = new Wall("West");
         Wall wall2 = new Wall("South");
         Wall wall3 = new Wall("East");
