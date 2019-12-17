@@ -33,5 +33,22 @@ public class Main {
 
         bedroom.makeBed();
         bedroom.getLamp().turnOn();
+
+        //Demo on not using encapsulation.
+        System.out.println();
+        System.out.println("Demo on not using encapsulation...");
+        Player player1 = new Player();
+        player1.name = "Kaveesha";
+        player1.health = 100;
+        player1.weapon = "Arrow";
+        player1.loseHealth(110);
+        player1.health = 50;
+        player1.health = -400; //The console output never gets executed.
+
+        //Demo on encapsulation.
+        System.out.println();
+        System.out.println("Demo on encapsulation...");
+        EnhancedPlayer player2 = new EnhancedPlayer("Amanda", 200, "Sword");
+        System.out.println("Initial health is " + player2.getHealth());
     }
 }
