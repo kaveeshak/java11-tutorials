@@ -50,5 +50,20 @@ public class Main {
         System.out.println("Demo on encapsulation...");
         EnhancedPlayer player2 = new EnhancedPlayer("Amanda", 200, "Sword");
         System.out.println("Initial health is " + player2.getHealth());
+
+        //Testing encapsulation challenge exercise.
+        System.out.println();
+        System.out.println("Testing encapsulation challenge exercise...");
+        Printer printer1 = new Printer(false);
+        System.out.println("Toner: " + printer1.getTonerLevel());
+        printer1.print(20);
+        System.out.println("Number of pages printed: " + printer1.getNumberOfPagesPrinted());
+
+        Printer printer2 = new Printer(true);
+        printer2.fillToner(300);
+        printer2.print(21);
+        System.out.println("Toner: " + printer2.getTonerLevel());
+        System.out.println("Number of pages printed: " + printer2.getNumberOfPagesPrinted());
+
     }
 }
