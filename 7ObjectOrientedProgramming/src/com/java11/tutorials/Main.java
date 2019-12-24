@@ -72,6 +72,14 @@ public class Main {
             Movie randomMovie = getRandomMovie();
             System.out.println(randomMovie.plot());
         }
+
+        //Testing Polymorphism challenge.
+        System.out.println();
+        System.out.println("Testing polymorphism challenge...");
+        BasicCar car1 = new Camry();
+        car1.startEngine();
+        car1 = new LandCruiser();
+        car1.startEngine();
     }
 
     private static Movie getRandomMovie() {
@@ -161,5 +169,57 @@ class Forgetable extends Movie {
     }
 
     //No plot method.
+}
+
+class BasicCar {
+    private String name;
+    private boolean isEngine;
+    private int numberOfCylinders;
+    private int numberOfWheels;
+
+    public BasicCar(String name, int numberOfCylinders) {
+        this.name = name;
+        this.numberOfCylinders = numberOfCylinders;
+        this.isEngine = true;
+        this.numberOfWheels = 5; //With spare.
+    }
+
+    public void startEngine() {
+        System.out.println("Engine starting...");
+    }
+
+    public void accelerate() {
+        System.out.println("Accelerating...");
+    }
+
+    public void applyBreak() {
+        System.out.println("Applying breaking...");
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+class Camry extends BasicCar {
+    public Camry() {
+        super("Camry SE", 4);
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println(getName() + " starting engine...");
+    }
+}
+
+class LandCruiser extends BasicCar {
+    public LandCruiser() {
+        super("LandCruiser", 4);
+    }
+
+    @Override
+    public void startEngine() {
+        System.out.println(getClass().getSimpleName() + " starting engine...");
+    }
 }
 
