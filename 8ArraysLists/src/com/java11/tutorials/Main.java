@@ -1,5 +1,6 @@
 package com.java11.tutorials;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -26,11 +27,38 @@ public class Main {
         //System.out.println("The average of the input numbers is " + getAverage(inputNumbers));
 
         //Arrays challenge exercise.
-        System.out.println("Arrays challenge exercise...");
-        int[] inputNumbers = getIntegersFromConsole(5);
-        printArray(sortIntegers(inputNumbers));
+        //System.out.println("Arrays challenge exercise...");
+        //int[] inputNumbers = getIntegersFromConsole(5);
+        //printArray(sortIntegers(inputNumbers));
+
+        //Demo on value types and reference types.
+        int myIntValue1 = 10;
+        int myIntValue2 = myIntValue1;
+        System.out.println(myIntValue1);
+        System.out.println(myIntValue2);
+
+        myIntValue2++;
+        System.out.println(myIntValue1);
+        System.out.println(myIntValue2);
+
+        int[] myArray1 = new int[5];
+        int[] myArray2 = myArray1;
+        System.out.println(Arrays.toString(myArray1));
+        System.out.println(Arrays.toString(myArray2));
+
+        myArray2[0] = 4;
+        System.out.println(Arrays.toString(myArray1));
+        System.out.println(Arrays.toString(myArray2));
+
+        modifyArray(myArray1);
+        System.out.println(Arrays.toString(myArray1));
+        System.out.println(Arrays.toString(myArray2));
 
 
+    }
+
+    private static void modifyArray(int[] array) {
+        array[0] = 100;
     }
 
     private static int[] sortIntegers(int[] array) {
