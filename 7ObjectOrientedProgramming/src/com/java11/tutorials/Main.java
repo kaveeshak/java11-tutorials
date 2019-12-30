@@ -80,6 +80,25 @@ public class Main {
         car1.startEngine();
         car1 = new LandCruiser();
         car1.startEngine();
+
+        //Testing master OOP challenge.
+        System.out.println();
+        System.out.println("Testing master OOP challenge...");
+        Hamburger hamburger = new Hamburger("Hamburger", "White Bread", "Beef", 4.99);
+        hamburger.addLettuce(1.00);
+        hamburger.addPickle(1.00);
+        hamburger.printDetailedFinalPrice();
+
+        HealthyBurger healthyBurger = new HealthyBurger("Chicken", 5.99);
+        healthyBurger.addLettuce(1.00);
+        healthyBurger.addMushrooms(1.34);
+        healthyBurger.addColeslaw(1.99);
+        healthyBurger.addCarrot(1.00);
+        healthyBurger.printDetailedFinalPrice();
+
+        DeluxHamburger deluxHamburger = new DeluxHamburger("Beef", 3.99);
+        deluxHamburger.addCarrot(1.00);
+        deluxHamburger.printDetailedFinalPrice();
     }
 
     private static Movie getRandomMovie() {
