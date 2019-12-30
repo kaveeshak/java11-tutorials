@@ -22,9 +22,34 @@ public class Main {
             System.out.println("The value stored in element " + i + " is " + myIntegers[i]);
         }
 
-        int[] inputNumbers = getIntegersFromConsole(4);
-        System.out.println("The average of the input numbers is " + getAverage(inputNumbers));
+        //int[] inputNumbers = getIntegersFromConsole(4);
+        //System.out.println("The average of the input numbers is " + getAverage(inputNumbers));
 
+        //Arrays challenge exercise.
+        System.out.println("Arrays challenge exercise...");
+        int[] inputNumbers = getIntegersFromConsole(5);
+        printArray(sortIntegers(inputNumbers));
+
+
+    }
+
+    private static int[] sortIntegers(int[] array) {
+        //int tempValue;
+        int[] sortedArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            sortedArray[i] = array[i];
+        }
+
+        for (int i = 0; i < sortedArray.length; i++) {
+            for (int j =  i + 1; j < sortedArray.length; j++) {
+                if (sortedArray[i] < sortedArray[j]) {
+                    int tempValue = sortedArray[i];
+                    sortedArray[i] = sortedArray[j];
+                    sortedArray[j] = tempValue;
+                }
+            }
+        }
+        return sortedArray;
     }
 
     private static int[] getIntegersFromConsole(int number) {
@@ -43,5 +68,11 @@ public class Main {
             sum += array[i];
         }
         return (sum / array.length);
+    }
+
+    private static void printArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("The value in element " + i + " is " + array[i]);
+        }
     }
 }
