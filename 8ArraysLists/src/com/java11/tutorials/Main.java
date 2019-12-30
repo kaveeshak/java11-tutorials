@@ -1,13 +1,14 @@
 package com.java11.tutorials;
 
 import com.java11.exercises.Exercises;
+import com.java11.exercises.GroceryList;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
+    private static GroceryList groceryList = new GroceryList();
 
     public static void main(String[] args) {
         //Demo on arrays.
@@ -72,6 +73,84 @@ public class Main {
         System.out.println("Original array is " + Arrays.toString(array));
         Exercises.reverse(array);
         System.out.println("Reversed array is " + Arrays.toString(array));
+
+        //Demo on ArrayList...
+        System.out.println("Demo on ArrayList...");
+        boolean isQuit = false;
+
+        printInstructions();
+
+        while (!isQuit) {
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 0:
+                    printInstructions();
+                    break;
+                case 1:
+                    groceryList.printGroceryList();
+                    break;
+                case 2:
+                    addItem();
+                    break;
+                case 3:
+                    modifyItem();
+                    break;
+                case 4:
+                    removeItem();
+                    break;
+                case 5:
+                    searchItem();
+                    break;
+                case 6:
+                    isQuit = true;
+                    break;
+            }
+        }
+    }
+
+    private static void searchItem() {
+        System.out.println("Enter the item: ");
+        String item = groceryList.findItem(scanner.nextLine());
+        if (item != null) {
+            System.out.println("The item " + item + " is found.");
+        } else {
+            System.out.println("The item is not found.");
+        }
+    }
+
+    private static void removeItem() {
+        System.out.print("Enter the item number: ");
+        int itemNumber = scanner.nextInt();
+        scanner.nextLine();
+        groceryList.removeGroceryItem(itemNumber - 1);
+    }
+
+    private static void modifyItem() {
+        System.out.print("Enter the grocery item number: ");
+        int itemNumber = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter the new item: ");
+        String item = scanner.nextLine();
+        groceryList.modifyGroceryItem(itemNumber - 1, item);
+    }
+
+    private static void addItem() {
+        System.out.print("Enter your grocery item: ");
+        groceryList.addItem(scanner.nextLine());
+    }
+
+    private static void printInstructions() {
+        System.out.println("\nPress ");
+        System.out.println("\t 0 - To print choice options.");
+        System.out.println("\t 1 - To print the list of grocery items.");
+        System.out.println("\t 2 - To add an item to the list.");
+        System.out.println("\t 3 - To modify an item in the list.");
+        System.out.println("\t 4 - To remove an item from the list.");
+        System.out.println("\t 5 - To search for an item in the list.");
+        System.out.println("\t 6 - To quit the application.");
     }
 
     private static void modifyArray(int[] array) {
@@ -103,6 +182,7 @@ public class Main {
 
         for (int i = 0; i < integerArray.length; i++) {
             integerArray[i] = scanner.nextInt();
+            scanner.nextLine();
         }
         return integerArray;
     }
