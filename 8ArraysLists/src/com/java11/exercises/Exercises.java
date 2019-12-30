@@ -1,5 +1,6 @@
 package com.java11.exercises;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Exercises {
@@ -23,5 +24,15 @@ public class Exercises {
             }
         }
         return minValue;
+    }
+
+    public static void reverse(int[] array) {
+       int midIndex = array.length / 2;
+       int maxIndex = array.length - 1;
+       for (int i = 0; i < midIndex; i++) {
+           int tempValue = array[i];
+           array[i] = array[maxIndex - i];
+           array[maxIndex - i] = tempValue;
+       }
     }
 }
