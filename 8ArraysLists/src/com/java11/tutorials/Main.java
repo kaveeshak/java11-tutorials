@@ -1,5 +1,7 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.Exercises;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -32,6 +34,8 @@ public class Main {
         //printArray(sortIntegers(inputNumbers));
 
         //Demo on value types and reference types.
+        System.out.println();
+        System.out.println("Demo on value types and reference types...");
         int myIntValue1 = 10;
         int myIntValue2 = myIntValue1;
         System.out.println(myIntValue1);
@@ -54,7 +58,11 @@ public class Main {
         System.out.println(Arrays.toString(myArray1));
         System.out.println(Arrays.toString(myArray2));
 
-
+        //Testing minimum element challenge...
+        System.out.println();
+        System.out.println("Testing minimum element challenge...");
+        int[] integers = Exercises.readIntegers(5);
+        System.out.println("The minimum value is " + Exercises.findMin(integers));
     }
 
     private static void modifyArray(int[] array) {
