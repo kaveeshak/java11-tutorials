@@ -16,16 +16,24 @@ public class GroceryList {
         }
     }
 
-    public void modifyGroceryItem(int position, String item) {
-        String oldItem = groceryList.get(position);
-        groceryList.set(position, item);
-        System.out.println("The grocery item " + oldItem + " modified to " + groceryList.get(position));
+    public void modifyGroceryItem(String oldItem, String newItem) {
+        int oldItemPosition = groceryList.indexOf(oldItem);
+        if (oldItemPosition >= 0) {
+            groceryList.set(oldItemPosition, newItem);
+            System.out.println("The grocery item " + oldItem + " modified to " + newItem);
+        } else {
+            System.out.println("The grocery item not found.");
+        }
     }
 
-    public void removeGroceryItem(int position) {
-        String oldItem = groceryList.get(position);
-        groceryList.remove(position);
-        System.out.println("Grocery item " + oldItem + " at position " + position + " is removed.");
+    public void removeGroceryItem(String item) {
+        int itemPosition = groceryList.indexOf(item);
+        if (itemPosition >= 0) {
+            groceryList.remove(itemPosition);
+            System.out.println("Grocery item " + item + "is removed.");
+        } else {
+            System.out.println("The grocery item not found.");
+        }
     }
 
     public String findItem(String item) {
