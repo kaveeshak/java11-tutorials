@@ -1,7 +1,9 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.Contact;
 import com.java11.exercises.Exercises;
 import com.java11.exercises.GroceryList;
+import com.java11.exercises.MobilePhone;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,6 +11,8 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static GroceryList groceryList = new GroceryList();
+    private static MobilePhone mobilePhone = new MobilePhone();
+
 
     public static void main(String[] args) {
         //Demo on arrays.
@@ -75,6 +79,7 @@ public class Main {
         System.out.println("Reversed array is " + Arrays.toString(array));
 
         //Demo on ArrayList...
+        /*
         System.out.println("Demo on ArrayList...");
         boolean isQuit = false;
 
@@ -109,6 +114,83 @@ public class Main {
                     break;
             }
         }
+        */
+
+        //Testing ArrayList challenge.
+        System.out.println("Testing ArrayList challenge...");
+        testArrayListChallenge();
+    }
+
+    private static void testArrayListChallenge() {
+        boolean isQuit = false;
+        mobilePhone.printAvailableOptions();
+
+        while (!isQuit) {
+            System.out.print("Enter your choice: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    isQuit = true;
+                    break;
+                case 2:
+                    mobilePhone.printAllContacts();
+                    break;
+                case 3:
+                    addNewContact();
+                    break;
+                case 4:
+                    updateExistingContact();
+                    break;
+                case 5:
+                    removeContact();
+                    break;
+                case 6:
+                    searchContact();
+                    break;
+                default:
+                    System.out.println("Entered choice is not valid.");
+                    mobilePhone.printAvailableOptions();
+                    break;
+            }
+        }
+    }
+
+    private static void searchContact() {
+        System.out.println("Enter the contact name to be searched: ");
+        String name = scanner.nextLine();
+        Contact contact = new Contact(name, "");
+        mobilePhone.findContact(contact);
+    }
+
+    private static void removeContact() {
+        System.out.print("Enter the contact name to be removed: ");
+        String name = scanner.nextLine();
+        Contact contact = new Contact(name, "");
+        mobilePhone.removeContact(contact);
+    }
+
+    private static void updateExistingContact() {
+        System.out.print("Enter the contact name to be modified: ");
+        String existingName = scanner.nextLine();
+        System.out.print("Enter the new name: ");
+        String newName = scanner.nextLine();
+        System.out.print("Enter the new phone number: ");
+        String newPhoneNumber = scanner.nextLine();
+
+        Contact oldContact = new Contact(existingName, "");
+        Contact newContact = new Contact(newName, newPhoneNumber);
+        mobilePhone.modifyContact(oldContact, newContact);
+    }
+
+    private static void addNewContact() {
+        System.out.print("Enter the new contact name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter the new contact phone number: ");
+        String phoneNumber = scanner.nextLine();
+        Contact contact = new Contact(name, phoneNumber);
+        mobilePhone.addContact(contact);
     }
 
     private static void searchItem() {
