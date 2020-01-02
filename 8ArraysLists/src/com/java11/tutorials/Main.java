@@ -5,6 +5,7 @@ import com.java11.exercises.Exercises;
 import com.java11.exercises.GroceryList;
 import com.java11.exercises.MobilePhone;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -118,7 +119,29 @@ public class Main {
 
         //Testing ArrayList challenge.
         System.out.println("Testing ArrayList challenge...");
-        testArrayListChallenge();
+        //testArrayListChallenge();
+
+        //Demo on autoboxing and unboxing...
+        System.out.println();
+        System.out.println("Demo on autoboxing and unboxing...");
+        demoAutoboxingUnboxing();
+    }
+
+    private static void demoAutoboxingUnboxing() {
+        Integer myInteger = new Integer(50); //Wrapper class.
+        ArrayList<Integer> integers = new ArrayList<Integer>(); //ArrayList of Integer objects.
+
+        for (int i = 0; i < 5; i++) {
+            integers.add(Integer.valueOf(i)); //Autoboxing.
+        }
+
+        for (int i = 0; i < integers.size(); i++) {
+            System.out.println(i + " --> " + integers.get(i).intValue()); //Unboxing.
+        }
+
+        //Autoboxing and unboxing is taken cared at the compiled time.
+        Integer myIntegerObjectWrapper = 10;
+        int myIntPrimitive = myIntegerObjectWrapper;
     }
 
     private static void testArrayListChallenge() {
