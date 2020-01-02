@@ -1,9 +1,6 @@
 package com.java11.tutorials;
 
-import com.java11.exercises.Contact;
-import com.java11.exercises.Exercises;
-import com.java11.exercises.GroceryList;
-import com.java11.exercises.MobilePhone;
+import com.java11.exercises.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -124,7 +121,35 @@ public class Main {
         //Demo on autoboxing and unboxing...
         System.out.println();
         System.out.println("Demo on autoboxing and unboxing...");
-        demoAutoboxingUnboxing();
+        //demoAutoboxingUnboxing();
+
+        //Testing Autoboxing and unboxing challenge.
+        System.out.println();
+        System.out.println("Testing Autoboxing and unboxing challenge...");
+        testAutoboxingUnboxingChallenge();
+    }
+
+    private static void testAutoboxingUnboxingChallenge() {
+        Bank chase = new Bank();
+
+        chase.addBranch("Piscataway");
+        chase.addBranch("Edison");
+        chase.addBranch("Somerset");
+        chase.addBranch("Edison");
+
+        chase.addCustomer("Edison", "Venura", 50.00);
+        chase.addCustomer("Edison", "Amanda", 100.00);
+        chase.addCustomer("Somerset", "Kevin", 20.65);
+        chase.addCustomer("Edison", "Venura", 56.32);
+        chase.addCustomer("Piscataway", "Ravi", 23.12);
+
+        chase.addTransaction("Edison", "Venura", 140.43);
+        chase.addTransaction("New Brunswick", "Tom", 43.21);
+        chase.addTransaction("Edison", "Laszlo", 56.43);
+
+        chase.printListOfCustomers("Edison", true);
+        chase.printListOfCustomers("Piscataway", true);
+        chase.printListOfCustomers("Somerset", true);
     }
 
     private static void demoAutoboxingUnboxing() {
