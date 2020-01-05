@@ -2,9 +2,7 @@ package com.java11.tutorials;
 
 import com.java11.exercises.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
@@ -115,6 +113,7 @@ public class Main {
         */
 
         //Testing ArrayList challenge.
+        System.out.println();
         System.out.println("Testing ArrayList challenge...");
         //testArrayListChallenge();
 
@@ -126,7 +125,125 @@ public class Main {
         //Testing Autoboxing and unboxing challenge.
         System.out.println();
         System.out.println("Testing Autoboxing and unboxing challenge...");
-        testAutoboxingUnboxingChallenge();
+        //testAutoboxingUnboxingChallenge();
+
+        //Demo on LinkedList.
+        System.out.println();
+        System.out.println("Demo on LinkedList...");
+        demoLinkedList();
+    }
+
+    private static void demoLinkedList() {
+        //LinkedList, Add, Remove, Iterator.
+        LinkedList<String> visitingCities = new LinkedList<String>();
+        visitingCities.add("Piscataway");
+        visitingCities.add("New Brunswick");
+        visitingCities.add("Atlantic City");
+        visitingCities.add("New York City");
+        visitingCities.add("Washington DC");
+        printLinkedList(visitingCities);
+
+        visitingCities.add(2, "Philadelphia");
+        printLinkedList(visitingCities);
+
+        visitingCities.remove(3);
+        printLinkedList(visitingCities);
+
+        //ListIterator
+        LinkedList<String> letters = new LinkedList<String>();
+        insertLinkedListInOrder(letters, "F");
+        insertLinkedListInOrder(letters, "H");
+        insertLinkedListInOrder(letters, "A");
+        insertLinkedListInOrder(letters, "F");
+        insertLinkedListInOrder(letters, "T");
+        insertLinkedListInOrder(letters, "Z");
+        printLinkedList(letters);
+
+        //Next, Previous.
+        visitCity(visitingCities);
+    }
+
+    private static void visitCity(LinkedList<String> linkedList) {
+        if (linkedList.isEmpty()) {
+            System.out.println("There are no cities to visit.");
+        } else {
+            Scanner scanner = new Scanner(System.in);
+            boolean isQuite = false;
+            ListIterator<String> iterator = linkedList.listIterator();
+            boolean isGoingForward = true;
+
+            printVisitInstructions();
+
+            while (!isQuite) {
+                int selection = scanner.nextInt();
+                scanner.nextLine();
+
+                switch (selection) {
+                    case 0:
+                        isQuite = true;
+                        break;
+                    case 1:
+                        if (!isGoingForward && iterator.hasNext()) {
+                            iterator.next();
+                            isGoingForward = true;
+                        }
+                        if (iterator.hasNext()) {
+                            System.out.println(iterator.next());
+                        } else {
+                            System.out.println("Reached the end of the vacation list.");
+                        }
+                        break;
+                    case 2:
+                        if (isGoingForward && iterator.hasPrevious()) {
+                            iterator.previous();
+                            isGoingForward = false;
+                        }
+                        if (iterator.hasPrevious()) {
+                            System.out.println(iterator.previous());
+                        } else {
+                            System.out.println("Reached the beginning of the vacation list.");
+                        }
+                        break;
+                    case 3:
+                        printVisitInstructions();
+                        break;
+                }
+            }
+        }
+    }
+
+    private static void printVisitInstructions() {
+        System.out.println("\nPress");
+        System.out.println("\t0: Quit");
+        System.out.println("\t1: Next City");
+        System.out.println("\t2: Previous City");
+        System.out.println("\t3: Print Menu");
+    }
+
+    private static boolean insertLinkedListInOrder(LinkedList<String> linkedList, String value) {
+        ListIterator<String> listIterator = linkedList.listIterator();
+        while (listIterator.hasNext()) {
+            int comparison = listIterator.next().compareTo(value);
+            if (comparison == 0) {
+                System.out.println(value + " is already in the LinkedList.");
+                return false;
+            } else if (comparison > 0) {
+                listIterator.previous();
+                listIterator.add(value);
+                return true;
+            }
+
+        }
+        listIterator.add(value);
+        return true;
+    }
+
+    private static void printLinkedList(LinkedList<String> linkedList) {
+        Iterator<String> iterator = linkedList.iterator();
+        while (iterator.hasNext()) {
+            System.out.println("Now visiting --> " + iterator.next() + " ");
+        }
+        System.out.println("================================");
     }
 
     private static void testAutoboxingUnboxingChallenge() {
