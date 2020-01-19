@@ -1,6 +1,7 @@
 package com.java11.main;
 
 import com.java11.exercises.ISavable;
+import com.java11.exercises.Monster;
 import com.java11.exercises.Player;
 import com.java11.tutorials.DeskPhone;
 import com.java11.tutorials.ITelephone;
@@ -20,11 +21,16 @@ public class Main {
     }
 
     private static void testInterfaceChallenge() {
-        Player myPlayer = new Player("Kaveesha", 170, 89, "Gun");
+        ISavable myPlayer = new Player("Kaveesha", 170, 89, "Gun");
         saveToStorage(myPlayer);
         loadToObject(myPlayer);
         saveToStorage(myPlayer);
         myPlayer.toString();
+
+        ISavable monsterPlayer = new Monster("Tiger Monster", 100, "Teeth");
+        saveToStorage(monsterPlayer);
+        monsterPlayer.toString();
+        ((Monster) monsterPlayer).callOtherMosters();
     }
 
     private static void loadToObject(ISavable savableObject) {
