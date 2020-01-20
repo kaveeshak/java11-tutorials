@@ -4,6 +4,7 @@ import com.java11.exercises.ISavable;
 import com.java11.exercises.Monster;
 import com.java11.exercises.Player;
 import com.java11.tutorials.DeskPhone;
+import com.java11.tutorials.GearBox;
 import com.java11.tutorials.ITelephone;
 import com.java11.tutorials.MobilePhone;
 
@@ -14,10 +15,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         //Demo on Interfaces.
+        //System.out.println("Testing demo on Interfaces...");
         //testInterfacesDemo();
 
         //Testing interfaces challenge.
-        testInterfaceChallenge();
+        //System.out.println();
+        //System.out.println("Testing interfaces challenge...");
+        //testInterfaceChallenge();
+
+        //Demo on Nested classes.
+        System.out.println();
+        System.out.println("Testing demo on nested classes...");
+        testNestedClassDemo();
+    }
+
+    private static void testNestedClassDemo() {
+        GearBox toyota = new GearBox(6, 0);
+        //This is how an instance of an inner class is created. However we usually define inner classes
+        //as private.
+        //GearBox.Gear toyotaGear1 = toyota.new Gear(1, 3.4);
+        //System.out.println(toyotaGear1.driveSpeed(34));
     }
 
     private static void testInterfaceChallenge() {
