@@ -30,11 +30,24 @@ public class Main {
     }
 
     private static void testNestedClassDemo() {
-        GearBox toyota = new GearBox(6, 0);
+        //GearBox toyota = new GearBox(6, 0);
         //This is how an instance of an inner class is created. However we usually define inner classes
         //as private.
         //GearBox.Gear toyotaGear1 = toyota.new Gear(1, 3.4);
         //System.out.println(toyotaGear1.driveSpeed(34));
+
+        GearBox durango = new GearBox(6, 0);
+        durango.addGear(1, 3.4);
+        durango.addGear(2, 4.6);
+        durango.addGear(3, 6.7);
+        durango.changeGear(3);
+        System.out.println(durango.wheelSpeed(543));
+        durango.operateClutch(true);
+        durango.changeGear(3);
+        System.out.println(durango.wheelSpeed(890));
+        durango.operateClutch(false);
+        System.out.println(durango.wheelSpeed(890));
+
     }
 
     private static void testInterfaceChallenge() {
