@@ -3,16 +3,15 @@ package com.java11.main;
 import com.java11.exercises.ISavable;
 import com.java11.exercises.Monster;
 import com.java11.exercises.Player;
-import com.java11.tutorials.DeskPhone;
-import com.java11.tutorials.GearBox;
-import com.java11.tutorials.ITelephone;
-import com.java11.tutorials.MobilePhone;
+import com.java11.tutorials.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+    private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
         //Demo on Interfaces.
         //System.out.println("Testing demo on Interfaces...");
@@ -30,24 +29,81 @@ public class Main {
     }
 
     private static void testNestedClassDemo() {
-        //GearBox toyota = new GearBox(6, 0);
-        //This is how an instance of an inner class is created. However we usually define inner classes
-        //as private.
-        //GearBox.Gear toyotaGear1 = toyota.new Gear(1, 3.4);
-        //System.out.println(toyotaGear1.driveSpeed(34));
+//        GearBox toyota = new GearBox(6, 0);
+//        This is how an instance of an inner class is created. However we usually define inner classes
+//        as private.
+//        GearBox.Gear toyotaGear1 = toyota.new Gear(1, 3.4);
+//        System.out.println(toyotaGear1.driveSpeed(34));
 
-        GearBox durango = new GearBox(6, 0);
-        durango.addGear(1, 3.4);
-        durango.addGear(2, 4.6);
-        durango.addGear(3, 6.7);
-        durango.changeGear(3);
-        System.out.println(durango.wheelSpeed(543));
-        durango.operateClutch(true);
-        durango.changeGear(3);
-        System.out.println(durango.wheelSpeed(890));
-        durango.operateClutch(false);
-        System.out.println(durango.wheelSpeed(890));
+//        GearBox durango = new GearBox(6, 0);
+//        durango.addGear(1, 3.4);
+//        durango.addGear(2, 4.6);
+//        durango.addGear(3, 6.7);
+//        durango.changeGear(3);
+//        System.out.println(durango.wheelSpeed(543));
+//        durango.operateClutch(true);
+//        durango.changeGear(3);
+//        System.out.println(durango.wheelSpeed(890));
+//        durango.operateClutch(false);
+//        System.out.println(durango.wheelSpeed(890));
 
+//        localInnerClassDemo();
+
+        anonymousInnerClassDemo();
+    }
+
+    private static void anonymousInnerClassDemo() {
+        Button continueButton = new Button("Continue");
+        boolean isQuit = false;
+
+        continueButton.setOnClickListener(new Button.IOnClickListener() {
+            @Override
+            public void onClick(String title) {
+                System.out.println("Button " + title + " was clicked.");
+            }
+        });
+
+        while (!isQuit) {
+            System.out.println("Press 0 to quit.\nPress 1 to click on Send.");
+            int option = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (option) {
+                case 0:
+                    isQuit = true;
+                    break;
+                case 1:
+                    continueButton.onClick();
+                    break;
+            }
+        }
+    }
+
+    private static void localInnerClassDemo() {
+        class OnClickListener implements Button.IOnClickListener {
+            public void onClick(String name) {
+                System.out.println("Button " + name + " was clicked.");
+            }
+        }
+
+        boolean isQuit = false;
+        Button button = new Button("Send");
+        button.setOnClickListener(new OnClickListener());
+
+        while (!isQuit) {
+            System.out.println("Press 0 to quit.\nPress 1 to click on Send.");
+            int option = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (option) {
+                case 0:
+                    isQuit = true;
+                    break;
+                case 1:
+                    button.onClick();
+                    break;
+            }
+        }
     }
 
     private static void testInterfaceChallenge() {
