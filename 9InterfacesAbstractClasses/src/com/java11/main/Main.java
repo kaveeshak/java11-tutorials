@@ -1,5 +1,6 @@
 package com.java11.main;
 
+import com.java11.exercises.Album;
 import com.java11.exercises.ISavable;
 import com.java11.exercises.Monster;
 import com.java11.exercises.Player;
@@ -23,9 +24,25 @@ public class Main {
         //testInterfaceChallenge();
 
         //Demo on Nested classes.
+        //System.out.println();
+        //System.out.println("Testing demo on nested classes...");
+        //testNestedClassDemo();
+
+        //Testing nested classes challenge.
         System.out.println();
-        System.out.println("Testing demo on nested classes...");
-        testNestedClassDemo();
+        System.out.println("Testing nested classes challenge...");
+        testNestedClassesChallenge();
+    }
+
+    private static void testNestedClassesChallenge() {
+        Album bnsAlbum = new Album("bns2020");
+        bnsAlbum.addSong("Where do I find you");
+        bnsAlbum.addSong("How is it going");
+        bnsAlbum.addSong("She left me to die");
+        bnsAlbum.addSong("she left me to die");
+        bnsAlbum.addSong("Where do I find you");
+        bnsAlbum.findSong("Here we come");
+        bnsAlbum.findSong("How is it going");
     }
 
     private static void testNestedClassDemo() {
