@@ -29,9 +29,28 @@ public class Main {
         //testNestedClassDemo();
 
         //Testing nested classes challenge.
+        //System.out.println();
+        //System.out.println("Testing nested classes challenge...");
+        //testNestedClassesChallenge();
+
+        //Testing abstract classes demo.
         System.out.println();
-        System.out.println("Testing nested classes challenge...");
-        testNestedClassesChallenge();
+        System.out.println("Testing Abstract classes demo...");
+        testAbstractClassesDemo();
+    }
+
+    private static void testAbstractClassesDemo() {
+        Dog myDog = new Dog("Honey");
+        myDog.eat();
+        myDog.breathe();
+
+        Parrot myParrot = new Parrot("Green Parrot");
+        myParrot.eat();
+        myParrot.breathe();
+        myParrot.fly();
+
+        Penguin myPenguin = new Penguin("American Penguin");
+        myPenguin.fly();
     }
 
     private static void testNestedClassesChallenge() {
