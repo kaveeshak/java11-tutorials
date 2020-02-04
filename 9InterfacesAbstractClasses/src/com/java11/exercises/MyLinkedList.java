@@ -18,8 +18,8 @@ public class MyLinkedList implements NodeList {
 
         ListItem currentItem = root;
         while (currentItem != null) {
-            int compareResult = currentItem.compareTo(newItem);
-            if (compareResult < 0) {
+            int newItemcompareResult = currentItem.compareTo(newItem);
+            if (newItemcompareResult > 0) {
                 if (currentItem.nextItem() != null) {
                     currentItem = currentItem.nextItem();
                 } else {
@@ -31,7 +31,7 @@ public class MyLinkedList implements NodeList {
                     currentItem.setNextItem(newItem).setPreviousItem(currentItem);
                     return true;
                 }
-            } else if (compareResult > 0) {
+            } else if (newItemcompareResult < 0) {
                 if (currentItem.previousItem() == null) {
                     //Abbreviated as above.
                     newItem.setNextItem(currentItem).setPreviousItem(newItem);

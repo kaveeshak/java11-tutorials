@@ -1,9 +1,6 @@
 package com.java11.main;
 
-import com.java11.exercises.Album;
-import com.java11.exercises.ISavable;
-import com.java11.exercises.Monster;
-import com.java11.exercises.Player;
+import com.java11.exercises.*;
 import com.java11.tutorials.*;
 
 import java.util.ArrayList;
@@ -34,9 +31,27 @@ public class Main {
         //testNestedClassesChallenge();
 
         //Testing abstract classes demo.
+        //System.out.println();
+        //System.out.println("Testing Abstract classes demo...");
+        //testAbstractClassesDemo();
+
+        //Testing Abstract classes challenge.
         System.out.println();
-        System.out.println("Testing Abstract classes demo...");
-        testAbstractClassesDemo();
+        System.out.println("Testing abstract classes challenge...");
+        testAbstractClassesChallenge();
+    }
+
+    private static void testAbstractClassesChallenge() {
+        String cities = "Edison,New Bruinswick,Piscataway,Jersey City,Fords,Woodbridge";
+        String[] citiesArray = cities.split(",");
+
+        MyLinkedList citiesList = new MyLinkedList();
+        citiesList.traverse(citiesList.getRoot());
+
+        for (String city : citiesArray) {
+            citiesList.addItem(new Node(city));
+        }
+        citiesList.traverse(citiesList.getRoot());
     }
 
     private static void testAbstractClassesDemo() {
