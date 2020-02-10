@@ -44,14 +44,31 @@ public class Main {
     private static void testAbstractClassesChallenge() {
         String cities = "Edison,New Bruinswick,Piscataway,Jersey City,Fords,Woodbridge";
         String[] citiesArray = cities.split(",");
-
         MyLinkedList citiesList = new MyLinkedList();
         citiesList.traverse(citiesList.getRoot());
-
         for (String city : citiesArray) {
             citiesList.addItem(new Node(city));
         }
         citiesList.traverse(citiesList.getRoot());
+
+        String numbers = "4,9,1,3,7";
+        String[] numbersArray = numbers.split(",");
+        MyLinkedList numbersList = new MyLinkedList();
+        for (String number : numbersArray) {
+            numbersList.addItem(new Node(number));
+        }
+        citiesList.traverse(numbersList.getRoot());
+        numbersList.removeItem(new Node("3"));
+        citiesList.traverse(numbersList.getRoot());
+        numbersList.removeItem(new Node("4"));
+        citiesList.traverse(numbersList.getRoot());
+        numbersList.removeItem(new Node("7"));
+        citiesList.traverse(numbersList.getRoot());
+        numbersList.removeItem(new Node("1"));
+        citiesList.traverse(numbersList.getRoot());
+        numbersList.removeItem(new Node("9"));
+        citiesList.traverse(numbersList.getRoot());
+        citiesList.traverse(numbersList.getRoot());
     }
 
     private static void testAbstractClassesDemo() {

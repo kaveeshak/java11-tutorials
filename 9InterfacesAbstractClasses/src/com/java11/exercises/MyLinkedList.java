@@ -55,7 +55,32 @@ public class MyLinkedList implements NodeList {
 
 
     @Override
-    public boolean removeItem(ListItem listItem) {
+    public boolean removeItem(ListItem removeItem) {
+        if (removeItem == null) {
+            System.out.println("Invalid argument.");
+            return false;
+        }
+
+        System.out.println("Removing " + removeItem.getValue() + " from the list.");
+        ListItem currentItem = root;
+        while (currentItem != null) {
+            int removeItemCompareResult = currentItem.compareTo(removeItem);
+            if (removeItemCompareResult == 0) {
+                if (currentItem == root) {
+                    root = currentItem.nextItem();
+                } else {
+                    currentItem.previousItem().setNextItem(currentItem.nextItem());
+                    if (currentItem.nextItem() != null) {
+                        currentItem.nextItem().setPreviousItem(currentItem.previousItem());
+                    }
+                }
+                return true;
+            } else if (removeItemCompareResult > 0) {
+                currentItem = currentItem.nextItem();
+            } else {
+                return false;
+            }
+        }
         return false;
     }
 
