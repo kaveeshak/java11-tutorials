@@ -42,6 +42,8 @@ public class Main {
     }
 
     private static void testAbstractClassesChallenge() {
+        //LinkedList
+        System.out.println("LinkedList...");
         String cities = "Edison,New Bruinswick,Piscataway,Jersey City,Fords,Woodbridge";
         String[] citiesArray = cities.split(",");
         MyLinkedList citiesList = new MyLinkedList();
@@ -51,7 +53,7 @@ public class Main {
         }
         citiesList.traverse(citiesList.getRoot());
 
-        String numbers = "4,9,1,3,7";
+        String numbers = "4,9,1,3,7,7,1";
         String[] numbersArray = numbers.split(",");
         MyLinkedList numbersList = new MyLinkedList();
         for (String number : numbersArray) {
@@ -69,6 +71,16 @@ public class Main {
         numbersList.removeItem(new Node("9"));
         citiesList.traverse(numbersList.getRoot());
         citiesList.traverse(numbersList.getRoot());
+
+        //SearchTree
+        System.out.println("SearchTree...");
+        String[] myLetters = {"C", "T", "Z", "A", "Q", "L", "S", "C", "U"};
+        SearchTree mySearchTree = new SearchTree(null);
+        for (String letter : myLetters) {
+            mySearchTree.addItem(new Node(letter));
+        }
+        mySearchTree.traverse(mySearchTree.getRoot());
+
     }
 
     private static void testAbstractClassesDemo() {
