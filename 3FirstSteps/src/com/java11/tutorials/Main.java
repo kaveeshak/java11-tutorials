@@ -10,6 +10,7 @@ public class Main {
         System.out.println("newMiles");
 
         //Primitive data types.
+        System.out.println();
         System.out.println("Primitive data types...");
 
         //int data type.
@@ -62,5 +63,19 @@ public class Main {
         double pounds = 4d;
         double kilos = (pounds * 0.45359237d);
         System.out.println(pounds + " pounds = " + kilos + " kilos.");
+
+        //char data type.
+        char myChar1 = 'd';
+        char myChar2 = '#';
+        char myChar3 = '5';
+        char myChar4 = '\u00AE';
+        char myChar5 = '\u3041';
+
+        System.out.println(myChar4);
+        System.out.println(myChar5);
+
+        //boolean data type.
+        boolean isFemale = true;
+        System.out.println(isFemale);
     }
 }
