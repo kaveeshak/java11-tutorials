@@ -1,5 +1,7 @@
 package com.java11.tutorials;
 
+import java.text.DecimalFormat;
+
 public class Main {
     public static void main(String[] args) {
         System.out.println("Expressions and Statements...");
@@ -48,6 +50,19 @@ public class Main {
         displayHighScorePosition("Nishi", calculateHighScorePosition(900));
         displayHighScorePosition("Ama", calculateHighScorePosition(400));
         displayHighScorePosition("Honey", calculateHighScorePosition(50));
+
+        //The Math class.
+        System.out.println();
+        System.out.println("The Math class...");
+        int myInt = Math.round(23.45F);
+        long myLong = Math.round(45.5);
+        System.out.println(myInt);
+        System.out.println(myLong);
+
+        //Use of DecimalFormat class.
+        DecimalFormat format = new DecimalFormat("##.##");
+        System.out.println(format.format(1_234.535234));
+        System.out.println();
     }
 
     public static int calculateHighScorePosition(int score) {
