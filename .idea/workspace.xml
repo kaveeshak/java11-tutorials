@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b789d859-a3ce-4823-8ff2-0ce709b35ef4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/10Generics.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/BaseballPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/FootballPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
