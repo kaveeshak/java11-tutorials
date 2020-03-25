@@ -2,13 +2,13 @@ package com.java11.tutorials;
 
 import java.util.ArrayList;
 
-public class Team {
+public class Team<T extends Player > {
     private String name;
     private int played;
     private int won;
     private int lost;
     private int tied;
-    private ArrayList<Player> members;
+    private ArrayList<T> members;
 
     public Team(String name) {
         this.name = name;
@@ -19,12 +19,13 @@ public class Team {
         members = new ArrayList<>();
     }
 
-    public boolean addPlayer(Player player) {
+    public boolean addPlayer(T player) {
         if (members.contains(player)) {
             System.out.println("The player " + player.getName() + " already exist in the team.");
             return false;
         } else {
             System.out.println("The player " + player.getName() + " is added to the team.");
+            members.add(player);
             return true;
         }
     }
@@ -73,7 +74,7 @@ public class Team {
         return tied;
     }
 
-    public ArrayList<Player> getMembers() {
+    public ArrayList<T> getMembers() {
         return members;
     }
 

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b789d859-a3ce-4823-8ff2-0ce709b35ef4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/BaseballPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/FootballPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Team.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10Generics/out/production/10Generics/com/java11/tutorials/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/10Generics/out/production/10Generics/com/java11/tutorials/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Team.java" beforeDir="false" afterPath="$PROJECT_DIR$/10Generics/src/com/java11/tutorials/Team.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7a4e9313-8a91-4123-a449-af46bd09189e" name="Default Changelist" comment="" />
+      <changelist id="b789d859-a3ce-4823-8ff2-0ce709b35ef4" name="Default Changelist" comment="" />
       <created>1578936638753</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
