@@ -59,5 +59,9 @@ public class Main {
         baseBallTeam.addPlayer(baseballPlayer);
         System.out.println(baseBallTeam.getNumberOfPlayers());
 
+        Team<SoccerPlayer> soccerPlayerTeam = new Team<>("Soccer Team");
+        //The issue here is that we can pass any type of team object since the method is not type checked.
+        //We need to use the generic type in the method parameter.
+        //baseBallTeam.setMatchResults(soccerPlayerTeam, 3, 10);
     }
 }
