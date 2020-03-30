@@ -42,26 +42,41 @@ public class Main {
         BaseballPlayer baseballPlayer = new BaseballPlayer("Beck");
         SoccerPlayer soccerPlayer = new SoccerPlayer("Dick");
 
-        Team americanNationalFootballTeam = new Team("American National Football Team");
-        americanNationalFootballTeam.addPlayer(footballPlayer);
-        americanNationalFootballTeam.addPlayer(baseballPlayer);
-        americanNationalFootballTeam.addPlayer(soccerPlayer);
+        Team footBallTeam = new Team("footBallTeam");
+        footBallTeam.addPlayer(footballPlayer);
+        footBallTeam.addPlayer(baseballPlayer);
+        footBallTeam.addPlayer(soccerPlayer);
 
-        System.out.println(americanNationalFootballTeam.getNumberOfPlayers());
+        System.out.println(footBallTeam.getNumberOfPlayers());
 
         //The issue here is that the Team class is allowing to add any type of players without an actual check.
         //Above we have created an object for a football team. However since there are no checks in place, we can add
         //players from different sports.
 
-        //This is how we fix it now that our class is Generic.
-        Team<BaseballPlayer> baseBallTeam = new Team<>("NJ Baseball Team");
-        //baseBallTeam.addPlayer(footballPlayer); This will result in an error now that our class is type checked.
+        //This is how we fix it. We can make the Team class generic and pass in the type.
+        Team<FootballPlayer> footBallTeam2 = new Team<>("footBallTeam2");
+        footBallTeam2.addPlayer(footballPlayer);
+        Team<BaseballPlayer> baseBallTeam = new Team<>("baseBallTeam");
         baseBallTeam.addPlayer(baseballPlayer);
-        System.out.println(baseBallTeam.getNumberOfPlayers());
+        Team<SoccerPlayer> soccerTeam = new Team<>("soccerTeam");
+        soccerTeam.addPlayer(soccerPlayer);
+
+        //baseBallTeam.addPlayer(footballPlayer); This will result in an error now that our class is type checked.
 
         Team<SoccerPlayer> soccerPlayerTeam = new Team<>("Soccer Team");
         //The issue here is that we can pass any type of team object since the method is not type checked.
         //We need to use the generic type in the method parameter.
         //baseBallTeam.setMatchResults(soccerPlayerTeam, 3, 10);
+
+        footBallTeam2.setMatchResults(footBallTeam, 1, 0);
+        footBallTeam.setMatchResults(footBallTeam2, 0, 0);
+
+        System.out.println();
+        System.out.println("Rankings");
+        System.out.println(footBallTeam.getName() + ": " + footBallTeam.getRanking());
+        System.out.println(footBallTeam2.getName() + ": " + footBallTeam2.getRanking());
+
+        //We are using the compareTo method that we overrode.
+        System.out.println(footBallTeam2.compareTo(footBallTeam));
     }
 }

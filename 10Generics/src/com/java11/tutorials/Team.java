@@ -2,7 +2,7 @@ package com.java11.tutorials;
 
 import java.util.ArrayList;
 
-public class Team<T extends Player > {
+public class Team<T extends Player > implements Comparable<Team<T>> {
     private String name;
     private int played;
     private int won;
@@ -103,5 +103,16 @@ public class Team<T extends Player > {
 
     public void setTied(int tied) {
         this.tied = tied;
+    }
+
+    @Override
+    public int compareTo(Team<T> team) {
+        if (getRanking() < team.getRanking()) {
+            return -1;
+        } else if (getRanking() == team.getRanking()) {
+            return 0;
+        } else {
+            return 1;
+        }
     }
 }
