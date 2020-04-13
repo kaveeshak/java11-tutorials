@@ -1,5 +1,7 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.League;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -7,6 +9,32 @@ public class Main {
         //Generics
         System.out.println("Demo on Java Generics.");
         demoOnGenericTypes();
+
+        //Testing generics exercise.
+        System.out.println();
+        System.out.println("Testing generics exercise.");
+        testGenericsExercise();
+    }
+
+    private static void testGenericsExercise() {
+        Team<CricketPlayer> sriLankanCricket = new Team<>("Sri Lankan Cricket");
+        Team<CricketPlayer> australianCricket = new Team<>("Australian Cricket");
+        Team<CricketPlayer> englandCricket = new Team<>("England Cricket");
+        Team<CricketPlayer> indianCricket = new Team<>("Indian Cricket");
+
+        sriLankanCricket.setMatchResults(australianCricket, 5, 8);
+        australianCricket.setMatchResults(indianCricket, 54, 23);
+        indianCricket.setMatchResults(sriLankanCricket, 21, 34);
+        englandCricket.setMatchResults(australianCricket, 34, 28);
+
+        //A cricket league can only have cricket teams. So we made the League class generic.
+        League<Team<CricketPlayer>> worldCricketLeague = new League<>("World Cricket League");
+        worldCricketLeague.addTeam(sriLankanCricket);
+        worldCricketLeague.addTeam(australianCricket);
+        worldCricketLeague.addTeam(englandCricket);
+        worldCricketLeague.addTeam(indianCricket);
+
+        worldCricketLeague.printTeams();
     }
 
     private static void demoOnGenericTypes() {
