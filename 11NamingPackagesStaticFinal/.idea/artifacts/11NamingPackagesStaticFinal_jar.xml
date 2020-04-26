@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="11NamingPackagesStaticFinal:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/11NamingPackagesStaticFinal_jar</output-path>
+    <root id="archive" name="11NamingPackagesStaticFinal.jar">
+      <element id="module-output" name="11NamingPackagesStaticFinal" />
+    </root>
+  </artifact>
+</component>
