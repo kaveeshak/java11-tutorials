@@ -1,5 +1,6 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.Series;
 import com.java11.tutorials.game.ISavable;
 import com.java11.tutorials.game.Monster;
 import com.java11.tutorials.game.Player;
@@ -10,15 +11,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String [] args) {
         //Note that this section is not about AWT. This is an attempt to show the use of packages.
-        System.out.println("Use of packages...");
-        MyWindow myWindow = new MyWindow("Complete Java");
-        myWindow.setVisible(true);
+        //System.out.println("Use of packages...");
+        //MyWindow myWindow = new MyWindow("Complete Java");
+        //myWindow.setVisible(true);
 
         //Note that we copied the files over to demonstrate use of packages.
         //Testing interfaces challenge.
+        //System.out.println();
+        //System.out.println("Testing interfaces challenge...");
+        //testInterfaceChallenge();
+
+        //Testing exercise on packages...
         System.out.println();
-        System.out.println("Testing interfaces challenge...");
-        testInterfaceChallenge();
+        System.out.println("Testing exercise on packages...");
+        System.out.println(Series.nSum(10));
+        System.out.println(Series.factorial(4));
+        System.out.println(Series.fibonacci(10));
     }
 
     private static void testInterfaceChallenge() {
