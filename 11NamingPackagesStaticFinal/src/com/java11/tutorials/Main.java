@@ -1,6 +1,5 @@
 package com.java11.tutorials;
 
-import com.java11.exercises.Series;
 import com.java11.tutorials.game.ISavable;
 import com.java11.tutorials.game.Monster;
 import com.java11.tutorials.game.Player;
@@ -22,11 +21,26 @@ public class Main {
         //testInterfaceChallenge();
 
         //Testing exercise on packages...
+        //System.out.println();
+        //System.out.println("Testing exercise on packages...");
+        //System.out.println(Series.nSum(10));
+        //System.out.println(Series.factorial(4));
+        //System.out.println(Series.fibonacci(10));
+
+        //Demo on scope...
         System.out.println();
-        System.out.println("Testing exercise on packages...");
-        System.out.println(Series.nSum(10));
-        System.out.println(Series.factorial(4));
-        System.out.println(Series.fibonacci(10));
+        System.out.println("Demo on scope...");
+
+        //The privateVariable has a scope that is restricted to the main method's code block.
+        String privateVariable = "This variable is private to main() method.";
+        ScopeCheck scopeCheck = new ScopeCheck();
+        System.out.println("The value of ScopeCheck instance's privateVariable is " + scopeCheck.getPrivateVariable() + ".");
+        System.out.println(privateVariable);
+        scopeCheck.timesTwo();
+
+        System.out.println("****");
+        ScopeCheck.InnerClass innerClass = scopeCheck.new InnerClass();
+        innerClass.timesTwo();
     }
 
     private static void testInterfaceChallenge() {
