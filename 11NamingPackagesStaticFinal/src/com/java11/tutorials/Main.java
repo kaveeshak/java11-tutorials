@@ -1,5 +1,6 @@
 package com.java11.tutorials;
 
+import com.java11.exercises.X;
 import com.java11.tutorials.game.ISavable;
 import com.java11.tutorials.game.Monster;
 import com.java11.tutorials.game.Player;
@@ -41,6 +42,24 @@ public class Main {
         System.out.println("****");
         ScopeCheck.InnerClass innerClass = scopeCheck.new InnerClass();
         innerClass.timesTwo();
+
+        //Testing scope exercise...
+        //Note the use of same variable names are purely for challenging the
+        //understanding of the scope.
+        System.out.println();
+        System.out.println("Testing scope exercise...");
+        testScopeChallenge();
+    }
+
+    private static void testScopeChallenge() {
+        X x = new X(x());
+        x.x();
+    }
+
+    private static int x() {
+        Scanner x = new Scanner(System.in);
+        System.out.println("Enter an integer.");
+        return x.nextInt();
     }
 
     private static void testInterfaceChallenge() {
