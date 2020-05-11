@@ -28,7 +28,7 @@ public class Main {
         //System.out.println(Series.factorial(4));
         //System.out.println(Series.fibonacci(10));
 
-        //Demo on scope...
+/*        //Demo on scope...
         System.out.println();
         System.out.println("Demo on scope...");
 
@@ -48,7 +48,24 @@ public class Main {
         //understanding of the scope.
         System.out.println();
         System.out.println("Testing scope exercise...");
-        testScopeChallenge();
+        testScopeChallenge();*/
+
+        //Demo on access modifiers...
+        System.out.println();
+        System.out.println("Demo on access modifiers...");
+
+        Account amandaAccount = new Account("Amanda");
+        amandaAccount.deposit(200);
+        amandaAccount.deposit(400);
+        amandaAccount.deposit(-600);
+        amandaAccount.withdraw(-250);
+        amandaAccount.withdraw(100);
+
+        //Since we have declared class variables as public, they can be modified from anywhere outside of the class. This is not good.
+        //The class variables balance and transactions should only be modified within deposit/withdraw/calculateBalance methods.
+        //amandaAccount.balance = 1000;
+        //amandaAccount.transactions.add(500);
+        System.out.println("The balance on Amanda's account is " + amandaAccount.getBalance() + ".");
     }
 
     private static void testScopeChallenge() {
