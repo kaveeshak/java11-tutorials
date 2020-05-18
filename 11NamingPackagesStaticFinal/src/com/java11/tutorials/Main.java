@@ -50,7 +50,7 @@ public class Main {
         System.out.println("Testing scope exercise...");
         testScopeChallenge();*/
 
-        //Demo on access modifiers...
+/*        //Demo on access modifiers...
         System.out.println();
         System.out.println("Demo on access modifiers...");
 
@@ -65,7 +65,25 @@ public class Main {
         //The class variables balance and transactions should only be modified within deposit/withdraw/calculateBalance methods.
         //amandaAccount.balance = 1000;
         //amandaAccount.transactions.add(500);
-        System.out.println("The balance on Amanda's account is " + amandaAccount.getBalance() + ".");
+        System.out.println("The balance on Amanda's account is " + amandaAccount.getBalance() + ".");*/
+
+/*        System.out.println();
+        System.out.println("Demo on static keyword...");
+
+        StaticTest firstStaticTest = new StaticTest("1st StaticTestInstance");
+        System.out.println(firstStaticTest.getName() + " is instance number " + firstStaticTest.getNumberOfInstances() + ".");
+
+        StaticTest secondStaticTest = new StaticTest("2nd StaticTestInstance");
+        System.out.println(secondStaticTest.getName() + " is instance number " + secondStaticTest.getNumberOfInstances() + ".");
+
+        StaticTest thirdStaticTest = new StaticTest("3rd StaticTestInstance");
+        //Notice here that we are not getting the number of instances from thirdStaticTest object. There is only one class variable in memory
+        //and all instances share the same class variable.
+        System.out.println(secondStaticTest.getName() + " is instance number " + secondStaticTest.getNumberOfInstances() + ".");
+
+        //Static methods can be accessed without an instance of the class.
+        System.out.println("The number of instances using the static method without an instance of the class are " +
+                StaticTest.getNumberOfInstances());*/
     }
 
     private static void testScopeChallenge() {
