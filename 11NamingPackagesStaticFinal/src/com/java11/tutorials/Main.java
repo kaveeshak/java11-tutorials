@@ -97,6 +97,27 @@ public class Main {
         System.out.println(one.getInstanceNumber());
         System.out.println(two.getInstanceNumber());
         System.out.println(three.getInstanceNumber());
+
+        //We can see the use of constants through out Java classes.
+        System.out.println(Math.PI);
+
+        //Use of final classes and final constructors.
+        //We can't instantiate the Math class since the constructor is private.
+        //Math math = new Math();
+
+        //Use of final methods.
+        int myPassword = 19931130;
+        Password password = new Password(myPassword);
+        password.storePassword();
+        password.letMeIn(19930513);
+        password.letMeIn(19871101);
+        password.letMeIn(myPassword);
+
+        password = new ExtendedPassword(myPassword);
+        password.storePassword();
+        password.letMeIn(19930513);
+        password.letMeIn(19871101);
+        password.letMeIn(myPassword);
     }
 
     private static void testScopeChallenge() {
