@@ -10,6 +10,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String [] args) {
+        //Demo on packages...
         //Note that this section is not about AWT. This is an attempt to show the use of packages.
         //System.out.println("Use of packages...");
         //MyWindow myWindow = new MyWindow("Complete Java");
@@ -84,6 +85,18 @@ public class Main {
         //Static methods can be accessed without an instance of the class.
         System.out.println("The number of instances using the static method without an instance of the class are " +
                 StaticTest.getNumberOfInstances());*/
+
+        //Demo on final keyword...
+        System.out.println();
+        System.out.println("Demo on final keyword...");
+
+        SomeClass one = new SomeClass("One");
+        SomeClass two = new SomeClass("Two");
+        SomeClass three = new SomeClass("Three");
+
+        System.out.println(one.getInstanceNumber());
+        System.out.println(two.getInstanceNumber());
+        System.out.println(three.getInstanceNumber());
     }
 
     private static void testScopeChallenge() {
