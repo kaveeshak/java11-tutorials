@@ -87,37 +87,47 @@ public class Main {
                 StaticTest.getNumberOfInstances());*/
 
         //Demo on final keyword...
-        System.out.println();
-        System.out.println("Demo on final keyword...");
-
-        SomeClass one = new SomeClass("One");
-        SomeClass two = new SomeClass("Two");
-        SomeClass three = new SomeClass("Three");
-
-        System.out.println(one.getInstanceNumber());
-        System.out.println(two.getInstanceNumber());
-        System.out.println(three.getInstanceNumber());
-
-        //We can see the use of constants through out Java classes.
-        System.out.println(Math.PI);
+//        System.out.println();
+//        System.out.println("Demo on final keyword...");
+//
+//        SomeClass one = new SomeClass("One");
+//        SomeClass two = new SomeClass("Two");
+//        SomeClass three = new SomeClass("Three");
+//
+//        System.out.println(one.getInstanceNumber());
+//        System.out.println(two.getInstanceNumber());
+//        System.out.println(three.getInstanceNumber());
+//
+//        //We can see the use of constants through out Java classes.
+//        System.out.println(Math.PI);
 
         //Use of final classes and final constructors.
         //We can't instantiate the Math class since the constructor is private.
         //Math math = new Math();
 
         //Use of final methods.
-        int myPassword = 19931130;
-        Password password = new Password(myPassword);
-        password.storePassword();
-        password.letMeIn(19930513);
-        password.letMeIn(19871101);
-        password.letMeIn(myPassword);
+//        int myPassword = 19931130;
+//        Password password = new Password(myPassword);
+//        password.storePassword();
+//        password.letMeIn(19930513);
+//        password.letMeIn(19871101);
+//        password.letMeIn(myPassword);
+//
+//        password = new ExtendedPassword(myPassword);
+//        password.storePassword();
+//        password.letMeIn(19930513);
+//        password.letMeIn(19871101);
+//        password.letMeIn(myPassword);
 
-        password = new ExtendedPassword(myPassword);
-        password.storePassword();
-        password.letMeIn(19930513);
-        password.letMeIn(19871101);
-        password.letMeIn(myPassword);
+        //Demo on static initialization blocks...
+        System.out.println();
+        System.out.println("Demo on static initialization blocks...");
+
+        System.out.println("The main method is called.");
+        StaticInitializationBlocksTest staticInitializationBlocksTest = new StaticInitializationBlocksTest();
+        staticInitializationBlocksTest.testMethod();
+        System.out.println("The value of testFinalStaticVariable is " + staticInitializationBlocksTest.testFinalStaticVariable + ".");
+
     }
 
     private static void testScopeChallenge() {
