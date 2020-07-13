@@ -44,18 +44,26 @@ public class Theater {
     /**
      * Only for testing purposes.
      */
-    public void getSeats() {
+    public void printSeats() {
         for (Seat seat : seats) {
             System.out.println(seat.number);
         }
     }
 
-    private class Seat implements Comparable<Seat> {
+    public List<Seat> getSeats() {
+        return seats;
+    }
+
+    public class Seat implements Comparable<Seat> {
         private String number;
         private boolean isReserved;
 
         public Seat(String number) {
             this.number = number;
+        }
+
+        public String getNumber() {
+            return number;
         }
 
         public boolean reserve() {
