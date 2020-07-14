@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -27,6 +28,13 @@ public class JavaCollections {
 //        if (!edisonAmcTheaterSeatsShallowCopy.get(42).reserve()) {
 //            System.out.println("The seat " + edisonAmcTheaterSeatsShallowCopy.get(42).getNumber() + " is already reserved.");
 //        }
+
+        //Demo on bubble sort algorithm.
+        Theater edisonAmcTheater = new Theater("Edison", 24, 12);
+        Collections.shuffle(edisonAmcTheater.getSeats());
+        printTheaterSeatList(edisonAmcTheater.getSeats());
+        bubbleSort(edisonAmcTheater.getSeats());
+        printTheaterSeatList(edisonAmcTheater.getSeats());
     }
 
     private static void bubbleSort(List<? extends Theater.Seat> listToSort) {
